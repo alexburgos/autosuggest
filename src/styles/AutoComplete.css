@@ -1,0 +1,23 @@
+.AutoComplete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.AutoComplete label {
+  display: block;
+  font-size: 16px;
+}
+
+.AutoComplete input {
+  border: 1px solid #666;
+  border-radius: 0;
+  color: #444;
+  font-size: 16px;
+  margin-top: 20px;
+  padding: 5px;
+  height: 35px;
+  width: 300px;
+  -webkit-appearance: none;
+}

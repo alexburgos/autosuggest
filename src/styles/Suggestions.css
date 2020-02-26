@@ -1,0 +1,23 @@
+.Suggestions {
+  border: 2px solid #C4994F;
+  list-style: none;
+  max-height: 200px;
+  margin: 3px auto 0;
+  overflow-y: auto;
+  padding-left: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.Suggestions li {
+  border-bottom: 1px solid #666;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.Suggestions--active,
+.Suggestions li:hover {
+  background-color: #C4994F;
+  color: white;
+}

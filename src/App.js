@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import { AutoComplete } from './components';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Simple Autocomplete</h1>
+        <p>This application is a React component that suggests dog breeds as you type 
+          and returns a photo of the dog breed you search for.</p>
+        <p>Built with React and <a className="App-link" href="https://dog.ceo/dog-api">The Dog API</a>.</p>
       </header>
+      <main className="App-main">
+        <AutoComplete/>
+      </main>
     </div>
   );
 }
