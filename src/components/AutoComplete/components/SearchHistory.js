@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/SearchHistory.css';
+import '../../../styles/SearchHistory.css';
 
 function SearchHistory({ searches }) {
   return (

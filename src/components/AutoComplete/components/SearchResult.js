@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/SearchResult.css';
+import '../../../styles/SearchResult.css';
 
 function SearchResult({ dogPicture, searchQuery }) {
   return (

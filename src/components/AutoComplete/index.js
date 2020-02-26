@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Suggestions from './Suggestions';
-import SearchResult from './SearchResult';
-import SearchHistory from './SearchHistory';
-import '../styles/AutoComplete.css';
+import {
+  Suggestions,
+  SearchResult,
+  SearchHistory
+} from './components';
+import '../../styles/AutoComplete.css';
 
-function AutoComplete() {
+export default function AutoComplete() {
   const [breeds, setBreeds] = useState([]);
   const [activeSuggestion, setActiveSuggestion] = useState(0);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -154,5 +156,3 @@ function AutoComplete() {
     </div>
   );
 }
-
-export default AutoComplete;

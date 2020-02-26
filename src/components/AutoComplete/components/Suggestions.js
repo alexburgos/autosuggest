@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/Suggestions.css';
+import '../../../styles/Suggestions.css';
 
 function Suggestions({ suggestions, activeSuggestion, onClick }) {
   return (
