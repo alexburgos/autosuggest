@@ -16,7 +16,8 @@ export default function AutoComplete() {
   const [search, setSearch] = useState(cachedSearch ? JSON.parse(cachedSearch) : '');
   const [savedSearches, setSavedSearches] = useState([]);
   const [dogPicture, setDogPicture] = useState(null);
-
+  
+  // Fetch all dog breeds and set them as possible suggestions
   useEffect(() => {
     async function fetchDogBreeds() {
       try {
@@ -33,6 +34,7 @@ export default function AutoComplete() {
     fetchDogBreeds();
   }, []);
 
+  // Search for a random image of the dog breed
   useEffect(() => {
     if (search.length === 0) return;
 
@@ -52,6 +54,7 @@ export default function AutoComplete() {
     fetchDogBreedImage();
   }, [search]);
 
+  // Save every search
   function saveSearch(currentSearch) {
     const searches = [...savedSearches];
     const newSearch = {};
