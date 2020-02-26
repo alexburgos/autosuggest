@@ -1,23 +1,26 @@
 .Suggestions {
-  border: 2px solid #C4994F;
+  background: #fff;
+  border: 2px solid #161837;
+  box-shadow: 2px 4px 6px #333;
   list-style: none;
   max-height: 200px;
   margin: 3px auto 0;
   overflow-y: auto;
   padding-left: 0;
   text-align: left;
-  width: 100%;
+  width: 300px;
 }
 
 .Suggestions li {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #161837;
+  color: #333;
   cursor: pointer;
   font-size: 16px;
   padding: 10px;
 }
 
-.Suggestions--active,
+.Suggestions li.active,
 .Suggestions li:hover {
-  background-color: #C4994F;
-  color: white;
+  background-color: #161837;
+  color: #fff;
 }

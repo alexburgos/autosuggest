@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 25px;
 }
 
 .AutoComplete label {
@@ -12,10 +11,10 @@
 
 .AutoComplete input {
   border: 1px solid #666;
-  border-radius: 0;
-  color: #444;
+  box-shadow: 2px 4px 6px #333;
+  color: #333;
   font-size: 16px;
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 5px;
   height: 35px;
   width: 300px;

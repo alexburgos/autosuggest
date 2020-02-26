@@ -1,3 +1,25 @@
 .SearchHistory {
-  
+  list-style: none;
+  overflow-y: auto;
+  padding-left: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.SearchHistory li {
+  border-bottom: 1px solid #161837;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 7px;
+  padding: 5px 0;
+  position: relative;
+}
+
+.SearchHistory-time-stamp {
+  font-size: 13px;
+  position: absolute;
+  right: 0;
+  bottom: 5px;
 }

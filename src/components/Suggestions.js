@@ -9,7 +9,7 @@ function Suggestions({ suggestions, activeSuggestion, onClick }) {
         let className;
 
         if (i === activeSuggestion) {
-          className = 'Suggestions--active';
+          className = 'active';
         }
 
         return (

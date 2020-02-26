@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Simple Autocomplete</h1>
+        <h1>Dog Autocomplete</h1>
         <p>This application is a React component that suggests dog breeds as you type 
           and returns a photo of the dog breed you search for.</p>
         <p>Built with React and <a className="App-link" href="https://dog.ceo/dog-api">The Dog API</a>.</p>

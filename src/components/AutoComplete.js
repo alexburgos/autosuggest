@@ -10,7 +10,8 @@ function AutoComplete() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [inputVal, setInputVal] = useState('');
-  const [search, setSearch] = useState('');
+  const cachedSearch = localStorage.getItem('search');
+  const [search, setSearch] = useState(cachedSearch ? JSON.parse(cachedSearch) : '');
   const [savedSearches, setSavedSearches] = useState([]);
   const [dogPicture, setDogPicture] = useState(null);
 
@@ -39,7 +40,9 @@ function AutoComplete() {
           `https://dog.ceo/api/breed/${search.toLowerCase()}/images/random`
         );
         const data = await response.json();
-        if (data.status === 'success') setDogPicture(data.message);
+        if (data.status === 'success') {
+          setDogPicture(data.message);
+        }
       } catch (error) {
         throw new Error('Error fetching images of the good pup');
       }
@@ -55,10 +58,10 @@ function AutoComplete() {
 
     newSearch.text = currentSearch;
     let timeStamp = new Date();
-    newSearch.timeStamp = `${timeStamp.toDateString()} ${timeStamp.toTimeString()}`;
-    searches.push(newSearch);
+    newSearch.timeStamp = `${timeStamp.toDateString()} ${timeStamp.toTimeString().substring(0, 8)}`;
+    searches.unshift(newSearch);
     setSavedSearches(searches);
-    setInputVal('');
+    localStorage.setItem('search', JSON.stringify(currentSearch));
   }
 
   function handleChange(e) {
@@ -74,6 +77,8 @@ function AutoComplete() {
       if (suggestions.length > 0) {
         setSuggestions(suggestions);
         setShowSuggestions(true);
+      } else {
+        setShowSuggestions(false);
       }
     } else {
       setShowSuggestions(false);
@@ -100,6 +105,7 @@ function AutoComplete() {
       currentSearch = suggestions[activeSuggestion];
       if (currentSearch) {
         setSearch(currentSearch);
+        setInputVal(currentSearch);
         saveSearch(currentSearch);
         setActiveSuggestion(0);
         setShowSuggestions(false);
@@ -129,7 +135,7 @@ function AutoComplete() {
 
   return (
     <div className='AutoComplete'>
-      <label>Search for a dog breed: </label>
+      <label>Who's a good dog?</label>
       <input
         type='text'
         value={inputVal}
@@ -144,7 +150,7 @@ function AutoComplete() {
         />
       )}
       {savedSearches.length > 0 && <SearchHistory searches={savedSearches}/>}
-      {search && dogPicture && <SearchResult dogPicture={dogPicture} />}
+      {dogPicture && <SearchResult dogPicture={dogPicture} searchQuery={search} />}
     </div>
   );
 }

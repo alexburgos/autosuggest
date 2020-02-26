@@ -1,8 +1,9 @@
 .App {
-  background-color: #282c34;
-  color: #ddd;
+  background: linear-gradient(25deg, #7A4D57, #8A8EB5);
+  color: #fff;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 20px
 }
 
 
@@ -21,6 +22,7 @@
 
 .App-header p {
   margin: 5px 0;
+  width: 600px;
 }
 
 .App-main {
@@ -32,14 +34,16 @@
 }
 
 .App-link {
-  color: #C4994F;
+  font-weight: bold;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 800px) {
+  .App-header h1 {
+    font-size: 27px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-header p {
+    width: 100%;
   }
 }

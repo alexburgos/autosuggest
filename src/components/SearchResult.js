@@ -5,6 +5,7 @@ import '../styles/SearchResult.css';
 function SearchResult({ dogPicture, searchQuery }) {
   return (
     <div className='SearchResult'>
+      {searchQuery && <span>{searchQuery}</span>}
       <img src={dogPicture} alt={searchQuery} />
     </div>
   );
@@ -12,13 +13,12 @@ function SearchResult({ dogPicture, searchQuery }) {
 
 SearchResult.defaultProps = {
   dogPicture: '',
-  searchQuery: 'Dog'
+  searchQuery: ''
 };
 
 SearchResult.propTypes = {
   dogPicture: PropTypes.string.isRequired,
-  searchQuery: PropTypes.string.isRequired,
+  searchQuery: PropTypes.string.isRequired
 };
-
 
 export default SearchResult;
